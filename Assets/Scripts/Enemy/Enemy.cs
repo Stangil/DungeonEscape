@@ -34,11 +34,13 @@ public abstract class Enemy : MonoBehaviour
     public virtual void Init()
     {
         animator = GetComponentInChildren<Animator>();
+        currentTarget = pointA.position;
         //sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     public virtual void Movement()
     {
+        //Vector3.Distance(transform.position, pointA.position) < waypointDistance
         if (Vector3.Distance(transform.position, pointA.position) < waypointDistance)
         {
             currentTarget = pointB.position;

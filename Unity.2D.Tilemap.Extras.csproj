@@ -271,21 +271,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="GitHub.Api.45">
-      <HintPath>C:/Users/Stang/Documents/Repositories/Unity/Dungeon Escape/Assets/Plugins/GitHub/Editor/GitHub.Api.45.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Logging">
-      <HintPath>C:/Users/Stang/Documents/Repositories/Unity/Dungeon Escape/Assets/Plugins/GitHub/Editor/GitHub.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.Unity.45">
-      <HintPath>C:/Users/Stang/Documents/Repositories/Unity/Dungeon Escape/Assets/Plugins/GitHub/Editor/GitHub.Unity.45.dll</HintPath>
-    </Reference>
-    <Reference Include="GitHub.UnityShim">
-      <HintPath>C:/Users/Stang/Documents/Repositories/Unity/Dungeon Escape/Assets/Plugins/GitHub/Editor/GitHub.UnityShim.dll</HintPath>
-    </Reference>
-    <Reference Include="sfw.net">
-      <HintPath>C:/Users/Stang/Documents/Repositories/Unity/Dungeon Escape/Assets/Plugins/GitHub/Editor/sfw.net.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>

@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Editor", "Unity.2D.Tilemap.Extras.Editor.csproj", "{8E912999-8B1F-6700-1700-B2DBBBFA51E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{9F0B3F12-D4BB-3CCB-BC1A-A53A1B9DBBD3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Placeholder.EditorTests", "Unity.2D.Tilemap.Extras.Placeholder.EditorTests.csproj", "{35A205C7-D306-4A89-6F95-52BECFBF86B1}"
 EndProject
 Global
@@ -29,10 +27,6 @@ Global
 		{8E912999-8B1F-6700-1700-B2DBBBFA51E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E912999-8B1F-6700-1700-B2DBBBFA51E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E912999-8B1F-6700-1700-B2DBBBFA51E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9F0B3F12-D4BB-3CCB-BC1A-A53A1B9DBBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F0B3F12-D4BB-3CCB-BC1A-A53A1B9DBBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F0B3F12-D4BB-3CCB-BC1A-A53A1B9DBBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F0B3F12-D4BB-3CCB-BC1A-A53A1B9DBBD3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35A205C7-D306-4A89-6F95-52BECFBF86B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35A205C7-D306-4A89-6F95-52BECFBF86B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35A205C7-D306-4A89-6F95-52BECFBF86B1}.Release|Any CPU.ActiveCfg = Release|Any CPU

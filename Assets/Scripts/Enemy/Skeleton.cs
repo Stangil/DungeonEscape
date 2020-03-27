@@ -10,15 +10,20 @@ public class Skeleton : Enemy, IDamageable
     public override void Init()
     {
         base.Init();
-        //assign heath prop to  enemy health
+        Health = base.health;
     }
 
     public void Damage()
     {
         Debug.Log("DAMAGE!!!!");
-        //subtract 1 from health
+        Health --;
+        animator.SetTrigger("Hit");
+        isHit = true;
+        animator.SetBool("InCombat", true);
+        if (Health < 1)
+        {
+            Destroy(gameObject);
+        }
 
-        //if health < 1
-            //destroy bject
     }
 }

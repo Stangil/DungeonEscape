@@ -19,6 +19,7 @@ public abstract class Enemy : MonoBehaviour
     protected Animator animator;
     protected SpriteRenderer sprite;
 
+    protected bool isHit = false;
     public virtual void Update()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
@@ -53,8 +54,11 @@ public abstract class Enemy : MonoBehaviour
             animator.SetTrigger("Idle");
             direction = false;
         }
-
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
+        if(isHit == false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
+        }
+        
         FlipSprite(direction);
     }
 

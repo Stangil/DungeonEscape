@@ -6,7 +6,6 @@ public class Skeleton : Enemy, IDamageable
 {
     public int Health { get; set; }
 
-    //Use this for initialization
     public override void Init()
     {
         base.Init();

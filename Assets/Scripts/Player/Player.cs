@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
         _grounded = IsGrounded();
         //Flips sprite when changing direction
         FlipSprite(move);
-        //jump
         Jump();
         //Horizontal movement
         _rigid.velocity = new Vector2(move * _speed * Time.deltaTime, _rigid.velocity.y);

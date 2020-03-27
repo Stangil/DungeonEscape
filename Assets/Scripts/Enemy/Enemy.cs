@@ -14,15 +14,20 @@ public abstract class Enemy : MonoBehaviour
     protected Transform pointA, pointB;//waypoints
     [SerializeField]
     protected float waypointDistance = 0.1f;
+    [SerializeField]
+    protected float inCombatDistance = 2.0f;
     protected bool direction = false;
     protected Vector3 currentTarget;
     protected Animator animator;
     protected SpriteRenderer sprite;
 
     protected bool isHit = false;
+    [SerializeField]
+    protected Player player;
+    //var to store player
     public virtual void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") && animator.GetBool("InCombat") == false)
         {
             return;
         }
@@ -36,12 +41,11 @@ public abstract class Enemy : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         currentTarget = pointA.position;
-        //sprite = GetComponentInChildren<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     public virtual void Movement()
     {
-        //Vector3.Distance(transform.position, pointA.position) < waypointDistance
         if (Vector3.Distance(transform.position, pointA.position) < waypointDistance)
         {
             currentTarget = pointB.position;
@@ -58,10 +62,17 @@ public abstract class Enemy : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
         }
-        
+
+        float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
+
+       if (distance > inCombatDistance)
+        {
+            isHit = false;
+            animator.SetBool("InCombat", false);
+        }
+
         FlipSprite(direction);
     }
-
     private void FlipSprite(bool move)
     {
         if (move)

@@ -11,7 +11,10 @@ public class Skeleton : Enemy, IDamageable
         base.Init();
         Health = base.health;
     }
-
+    public override void Movement()
+    {
+        base.Movement();
+    }
     public void Damage()
     {
         Debug.Log("DAMAGE!!!!");
@@ -23,6 +26,5 @@ public class Skeleton : Enemy, IDamageable
         {
             Destroy(gameObject);
         }
-
     }
 }

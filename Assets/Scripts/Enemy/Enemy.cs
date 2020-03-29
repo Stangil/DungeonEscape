@@ -46,6 +46,8 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void Movement()
     {
+        InCombatLogic();
+
         if (Vector3.Distance(transform.position, pointA.position) < waypointDistance)
         {
             currentTarget = pointB.position;
@@ -58,22 +60,52 @@ public abstract class Enemy : MonoBehaviour
             animator.SetTrigger("Idle");
             direction = false;
         }
-        if(isHit == false)
+
+        if (isHit == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime);
         }
+        FlipSprite(direction);
+    }
 
+    private void InCombatLogic()
+    {
+        //distance to player
         float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
+        //direction to player
+        Vector3 playerDirection = player.transform.localPosition - transform.localPosition;
 
-       if (distance > inCombatDistance)
+        if (distance > inCombatDistance)
         {
             isHit = false;
             animator.SetBool("InCombat", false);
         }
 
-        FlipSprite(direction);
+        if (animator.GetBool("InCombat") == true)
+        {
+            if (playerDirection.x > 0)
+            {
+                direction = true;
+            }
+            else if (playerDirection.x < 0)
+            {
+                direction = false;
+            }
+        }
+        else
+        {
+            if(currentTarget == pointA.position)
+            {
+                direction = false;
+            }
+            else
+            {
+                direction = true;
+            }
+        }
     }
-    private void FlipSprite(bool move)
+
+    protected void FlipSprite(bool move)
     {
         if (move)
         {

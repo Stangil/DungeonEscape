@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skeleton : Enemy, IDamageable
 {
-    public int Health { get; set; }
+    //public override int Health { get; set; }
 
     public override void Init()
     {
@@ -15,16 +15,8 @@ public class Skeleton : Enemy, IDamageable
     {
         base.Movement();
     }
-    public void Damage()
+    public override void Damage()
     {
-        Debug.Log("DAMAGE!!!!");
-        Health --;
-        animator.SetTrigger("Hit");
-        isHit = true;
-        animator.SetBool("InCombat", true);
-        if (Health < 1)
-        {
-            Destroy(gameObject);
-        }
+        base.Damage();
     }
 }

@@ -24,6 +24,8 @@ public abstract class Enemy : MonoBehaviour
     protected bool isHit = false;
     [SerializeField]
     protected Player player;
+
+    public virtual int Health { get; set; }
     //var to store player
     public virtual void Update()
     {
@@ -116,4 +118,15 @@ public abstract class Enemy : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+    public virtual void Damage()
+    {
+        Health--;
+        animator.SetTrigger("Hit");
+        isHit = true;
+        animator.SetBool("InCombat", true);
+        if (Health < 1)
+        {
+            Destroy(gameObject);
+        }
+    } 
 }

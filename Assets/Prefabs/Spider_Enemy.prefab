@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5925078780813914867}
   - component: {fileID: 5925078780813914864}
   - component: {fileID: 5925078780813914865}
+  - component: {fileID: 737758570}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -101,6 +102,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &737758570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925078780813914866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c895c6691a7d9149929713db5eace89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5925078781383036861
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d153dec321ec3047a714a3bece2f31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 1
   speed: 1
   gems: 0
   pointA: {fileID: 0}
@@ -154,6 +167,8 @@ MonoBehaviour:
   waypointDistance: 0.2
   inCombatDistance: 2
   player: {fileID: 0}
+  acidPrefab: {fileID: 3348187533486864508, guid: d83ab9f7a31b4954a9bb1d3c38ac5cba,
+    type: 3}
 --- !u!61 &8136248212245033731
 BoxCollider2D:
   m_ObjectHideFlags: 0

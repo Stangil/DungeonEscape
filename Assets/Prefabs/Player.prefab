@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 82293666}
   - component: {fileID: 82293667}
   - component: {fileID: 82293668}
-  m_Layer: 0
+  - component: {fileID: 1573398978599955350}
+  m_Layer: 9
   m_Name: Hit_Box_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +40,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82293665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -79,6 +80,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1573398978599955350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82293665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146eb6b3b9a38964d99fcafbaa824b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1310624656
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +103,7 @@ GameObject:
   - component: {fileID: 1310624657}
   - component: {fileID: 1310624659}
   - component: {fileID: 1310624658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sword_Arc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +204,7 @@ GameObject:
   - component: {fileID: 8260741715153245008}
   - component: {fileID: 8260741715153245015}
   - component: {fileID: 8260741715153245014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,9 +308,9 @@ GameObject:
   - component: {fileID: 8260741715784584075}
   - component: {fileID: 8260741715784584071}
   - component: {fileID: 8260741715784584068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

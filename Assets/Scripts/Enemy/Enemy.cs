@@ -129,4 +129,6 @@ public abstract class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     } 
+
+    public virtual void Attack(){}
 }

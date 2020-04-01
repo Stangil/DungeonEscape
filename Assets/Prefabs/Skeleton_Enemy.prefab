@@ -140,7 +140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   speed: 0.5
-  gems: 0
+  gems: 3
+  diamondPrefab: {fileID: 6474073902855191961, guid: 9759a6ff6bea671438377cd785c48a60,
+    type: 3}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   waypointDistance: 0.1

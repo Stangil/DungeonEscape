@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    public int diamonds;
     private Rigidbody2D _rigid;
     private bool _resetJump = false;
     private bool _grounded = false;
@@ -95,5 +96,14 @@ public class Player : MonoBehaviour, IDamageable
     public void Damage()
     {
         Debug.Log("Player damaged");
+        Health--;
+        //animator.SetTrigger("Hit");
+        //isHit = true;
+        //animator.SetBool("InCombat", true);
+        //if (Health < 1)
+        //{
+        //    animator.SetTrigger("Death");
+        //}
+
     }
 }

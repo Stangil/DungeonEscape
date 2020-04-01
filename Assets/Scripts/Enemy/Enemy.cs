@@ -10,6 +10,7 @@ public abstract class Enemy : MonoBehaviour
     protected float speed;
     [SerializeField]
     protected int gems;
+    public GameObject diamondPrefab;
     [SerializeField]
     protected Transform pointA, pointB;//waypoints
     [SerializeField]
@@ -24,7 +25,7 @@ public abstract class Enemy : MonoBehaviour
     protected bool isHit = false;
     [SerializeField]
     protected Player player;
-
+    protected bool isDead = false;
     public virtual int Health { get; set; }
     //var to store player
     public virtual void Update()
@@ -33,7 +34,11 @@ public abstract class Enemy : MonoBehaviour
         {
             return;
         }
-        Movement();
+        if(isDead == false)
+        {
+            Movement();
+        }
+        
     }
     private void Start()
     {
@@ -120,13 +125,20 @@ public abstract class Enemy : MonoBehaviour
     }
     public virtual void Damage()
     {
+        if (isDead)
+        {
+            return;
+        }
         Health--;
         animator.SetTrigger("Hit");
         isHit = true;
         animator.SetBool("InCombat", true);
         if (Health < 1)
         {
-            Destroy(gameObject);
+            animator.SetTrigger("Death");
+            isDead = true;
+            GameObject diamond = Instantiate(diamondPrefab, transform.position - new Vector3(0.5f, 0, 0), Quaternion.identity) as GameObject;
+            diamond.GetComponent<Diamond>().gems = gems;
         }
     } 
 

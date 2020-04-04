@@ -343,9 +343,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c7847aacd266cb4e8a84637ab75683b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpforce: 300
+  diamonds: 0
+  _jumpforce: 400
   groundedRay: 1
-  _speed: 200
+  _speed: 300
 --- !u!114 &8260741715784584075
 MonoBehaviour:
   m_ObjectHideFlags: 0

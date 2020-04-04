@@ -21,7 +21,6 @@ public class Shop : MonoBehaviour
             }
             Debug.Log("Activate shop");
             shopPanel.SetActive(true);
-
         }
     }
 
@@ -37,23 +36,25 @@ public class Shop : MonoBehaviour
     {
         
         Debug.Log("Button clicked " + item);
-
-        switch(item)
+        switch (item)
         {
             case 0://flame sword
                 UIManager.UIinstance.UpdateShopSelection(55);
                 costOfItem = 200;
                 itemName = "Flame Sword";
+                currentItemSelected = 0;
                 break;
             case 1://Boots of flight
                 UIManager.UIinstance.UpdateShopSelection(-56);
                 costOfItem = 500;
                 itemName = "Boots of Flight";
+                currentItemSelected = 1;
                 break;
             case 2://Key to Castle
                 UIManager.UIinstance.UpdateShopSelection(-164);
                 costOfItem = 100;
                 itemName = "Key to Castle";
+                currentItemSelected = 2;
                 break;
         }
 
@@ -66,14 +67,16 @@ public class Shop : MonoBehaviour
         {
             if(player.GetComponent<Player>().diamonds >= costOfItem)
             {
+                //TODO switch set up later for multiple items
+                if(currentItemSelected == 2)//checking to  see if item is key
+                {
+                    GameManager.Instance.HasKeyToCastle = true;
+                }
                 Debug.Log("Player purchased: " + itemName);
                 player.GetComponent<Player>().diamonds -= costOfItem;
             }
         }
         shopPanel.SetActive(false);
     }
-    //Buy Item Method
-        //check if player has enough gems
-            //if they do award item
-               //if not close shop?
+
 }

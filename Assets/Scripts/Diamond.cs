@@ -18,6 +18,4 @@ public class Diamond : MonoBehaviour
             }
         }
     }
-    // check for player
-    //add the value to the player
 }

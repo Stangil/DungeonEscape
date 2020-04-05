@@ -14,7 +14,8 @@ public class Player : MonoBehaviour, IDamageable
     private float groundedRay = 1.0f;
     [SerializeField]
     private float _speed = 100.0f;
-      
+    
+    private int health = 4;
     private PlayerAnimation _playerAnimation;
     
     private SpriteRenderer _playerSpriteRenderer;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour, IDamageable
         _sword_ArcSpriteRenderer = transform.GetChild(1).GetComponent<SpriteRenderer>();
         _playerAnimation = GetComponent<PlayerAnimation>();
         _rigid = GetComponent<Rigidbody2D>();
+        Health = health;
     }
 
     void Update()
@@ -95,15 +97,20 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Damage()
     {
+        if(Health < 1)
+        {
+            return;
+        }
         Debug.Log("Player damaged");
         Health--;
-        //animator.SetTrigger("Hit");
-        //isHit = true;
-        //animator.SetBool("InCombat", true);
-        //if (Health < 1)
-        //{
-        //    animator.SetTrigger("Death");
-        //}
+        UIManager.UIinstance.UpdateLives(Health);
+
+
+
+        if (Health < 1)
+        {
+            _playerAnimation.Death();
+        }
 
     }
 

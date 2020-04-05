@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     public Text playerGemCountText;
     public Image selectionImage;
     public Text uiGemCount;
-
+    public Image[] healthBars;
     private void Awake()
     {
         _instance = this;
@@ -37,5 +37,17 @@ public class UIManager : MonoBehaviour
     public void UpdateGemCount(int count)
     {
         uiGemCount.text = ""+count;
+    }
+    public void UpdateLives(int livesRemaining)
+    {
+        for (int i = 0; i <= livesRemaining; i++)
+        {
+            //do nothing till hit the max
+            if(i == livesRemaining)
+            {
+                //hide i
+                healthBars[i].enabled = false;
+            }
+        }
     }
 }

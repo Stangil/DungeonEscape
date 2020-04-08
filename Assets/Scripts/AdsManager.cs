@@ -5,6 +5,10 @@ using UnityEngine.Advertisements;
 
 public class AdsManager : MonoBehaviour
 {
+    [SerializeField]
+    private Player player;
+    [SerializeField]
+    private Shop shop;
     public void ShowRewardedAd()
     {
         Debug.Log("Showing rewarded ad");
@@ -22,6 +26,8 @@ public class AdsManager : MonoBehaviour
             switch (result)
             {
                 case ShowResult.Finished:
+                    GameManager.Instance.Player.AddGems(100);
+                    UIManager.UIinstance.OpenShop(GameManager.Instance.Player.diamonds);
                     //award 100 gems
                     break;
                 case ShowResult.Skipped:

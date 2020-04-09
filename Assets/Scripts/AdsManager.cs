@@ -5,10 +5,7 @@ using UnityEngine.Advertisements;
 
 public class AdsManager : MonoBehaviour
 {
-    [SerializeField]
-    private Player player;
-    [SerializeField]
-    private Shop shop;
+
     public void ShowRewardedAd()
     {
         Debug.Log("Showing rewarded ad");
